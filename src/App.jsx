@@ -18,11 +18,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          This is an Order and Notes App management for warkop hau. By Ed and Naomi.
         </p>
       </div>
       <p className="read-the-docs">
