@@ -1,10 +1,11 @@
 // used when we want to perform strict check on types
+import { typeErrorMessage } from "../common/Exceptions/TypeErrorMessage";
 
 // base datatypes that can be checked using the typeof operator
 export const dataTypes = [ 'string','number','boolean','object'];
 
 // function to check the type of a value
-export const IsType = (type, value) => {
+const IsType = (value, type) => {
   if (dataTypes.includes(type))
     return typeof value === type;
   else {
@@ -14,28 +15,16 @@ export const IsType = (type, value) => {
         case 'integer':
             return Number.isInteger(value);
         case 'double':
-            return typeof value === "number" && !Number.isNaN(value) && !Number.isInteger(value);
+            return typeof value === "number" && !Number.isNaN(value);
     }
   }
 };
 
+export const assertType = (value, type, className = null) => {
+  if (!IsType(value, type)) throw new Error( typeErrorMessage(value, type, className));
+}
+
 // alternatively we can also check that class an object belongs to? should this be under a different lib?
 export const IsInstanceOf = (className, obj) => {
     return obj instanceof className;
-}
-
-// lists datatypes of variables or properties
-export const propType = {
-    propNameList: ['price', 'name'],
-    price: 'double',
-    name: 'string'
-}
-
-// perform strick check on a variable or property
-export const checkType = (propName, val) => {
-    const index = propType.propNameList.indexOf(propName);
-    if (index !== -1) {
-        return IsType(propType[propType.propNameList[index]], val);
-      }
-      return undefined;
 }
