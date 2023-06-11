@@ -1,6 +1,6 @@
 import { db } from "../firebase.js";
-import { doc, getDoc } from "../firestore";
-import { collection, getDocs } from "../firestore";
+import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { MenuItem } from "../types/MenuItem.js";
 
 //access a collection
@@ -46,13 +46,30 @@ export const getMenuItemsFromCollection = async (categortyName) => {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       const tempMenuItem = new MenuItem();
-  
-      tempMenuItem.setProperty("name", data["name"]);
-      tempMenuItem.setProperty("price", data["price"]);
-      tempMenuItem.setProperty("category", data["category"]);
-      tempMenuItem.setProperty("imageURL", data["image"]);
-      tempMenuItem.setProperty("addons", data["adds_on"]);
-      tempMenuItem.setProperty("options", data["option"]);
+
+      Object.keys(data).forEach((key) => {
+        switch(key)
+        {
+          case "name":
+            tempMenuItem.setProperty("name", data["name"]);
+            break;
+          case "price":
+            tempMenuItem.setProperty("price", data["price"]);
+            break;
+          case "category":
+            tempMenuItem.setProperty("category", data["category"]);
+            break;
+          case "image":
+            tempMenuItem.setProperty("imageURL", data["image"]);
+            break;
+          case "adds_on":
+            tempMenuItem.setProperty("addons", data["adds_on"]);
+            break;
+          case "options":
+            tempMenuItem.setProperty("options", data["option"]);
+            break;
+        }
+      });  
   
       MenuItems.push(tempMenuItem);
     });
