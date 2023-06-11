@@ -61,7 +61,7 @@ export const getMenuItemsFromCollection = async (categortyName) => {
   };
 
 export const openDocument = async (collectionName, documentName) => {
-    const docRef = doc(db, "cities", "SF");
+    const docRef = doc(db, collectionName, documentName);
     const docSnap = await getDoc(docRef);
 
     return {
