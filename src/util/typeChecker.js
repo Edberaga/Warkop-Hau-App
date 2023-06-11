@@ -15,7 +15,7 @@ const IsType = (value, type) => {
         case 'integer':
             return Number.isInteger(value);
         case 'double':
-            return typeof value === "number" && !Number.isNaN(value) && !Number.isInteger(value);
+            return typeof value === "number" && !Number.isNaN(value);
     }
   }
 };

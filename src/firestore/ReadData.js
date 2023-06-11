@@ -58,22 +58,22 @@ export const getMenuItemsFromCollection = async (categoryName) => {
           switch(key)
           {
             case "name":
-              tempMenuItem.setProperty("name", data["name"]);
+              tempMenuItem.set("name", data["name"]);
               break;
             case "price":
-              tempMenuItem.setProperty("price", data["price"]);
+              tempMenuItem.set("price", parseFloat(data["price"]));
               break;
             case "category":
-              tempMenuItem.setProperty("category", data["category"]);
+              tempMenuItem.set("category", data["category"]);
               break;
             case "image":
-              tempMenuItem.setProperty("imageURL", data["image"]);
+              tempMenuItem.set("imageURL", data["image"]);
               break;
             case "adds_on":
-              tempMenuItem.setProperty("addons", data["adds_on"]);
+              tempMenuItem.set("addons", data["adds_on"]);
               break;
             case "options":
-              tempMenuItem.setProperty("options", data["option"]);
+              tempMenuItem.set("options", data["option"]);
               break;
           }
         });  

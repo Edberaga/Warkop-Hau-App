@@ -31,7 +31,12 @@ export class MenuItem {
 
     //usage: menuItem.setProperty(propertyName, propertyValue);
     set(propertyName, propertyValue) {
-        this[propertyName] = value;
+        try {
+          this[propertyName] = propertyValue;
+        }
+        catch {
+          throw new Error (`The value of ${propertyName} is not defined: ${value}`);
+        }
         this.assertPropertyType(propertyName);
       }
 
