@@ -1,5 +1,6 @@
 import { db } from "../firebase.js";
 import { doc, setDoc } from "@firebase/firestore"; 
+import { writeDocumentError } from "../common/Exceptions/FirestoreErrorMessage.js";
 
 export const addRecord = async(collectionName, documentName, jsonToWrite) => {
     try {

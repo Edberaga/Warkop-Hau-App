@@ -1,15 +1,15 @@
-const retrieveCollectionError = (collectionRef) => {
+export const retrieveCollectionError = (collectionRef) => {
     return `Failed to retrieve documents from collection ${collectionRef}`;
 }
 
-const retrieveDocumentsError = (documentName, collectionName) => {
+export const retrieveDocumentsError = (documentName, collectionName) => {
     return `Failed to retrieve document ${documentName} from collection ${collectionName}`;
 }
 
-const deleteDocumentError = (documentName, collectionName) => {
+export const deleteDocumentError = (documentName, collectionName) => {
     return `Failed to delete document ${documentName} from collection ${collectionName}`;
 }
 
-const writeDocumentError = (documentName, collectionName, jsonToWrite) => {
+export const writeDocumentError = (documentName, collectionName, jsonToWrite) => {
     return `Failed to write json ${jsonToWrite} into document ${documentName} to collection ${collectionName}`;
 }

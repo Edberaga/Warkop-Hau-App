@@ -2,7 +2,7 @@ import { db } from "../firebase.js";
 import { doc, getDoc } from "@firebase/firestore";
 import { collection, getDocs } from "@firebase/firestore";
 import { MenuItem } from "../types/MenuItem.js";
-import "../common/Exceptions/FirestoreErrorMessage.js";
+import {retrieveCollectionError, retrieveDocumentsError} from "../common/Exceptions/FirestoreErrorMessage.js";
 
 //access a collection
 export const openCollection = async (collectionName) => {
@@ -83,7 +83,7 @@ export const getMenuItemsFromCollection = async (categoryName) => {
     }
     catch (e)
     {
-      throw new Error(`Exception while opening collection ${categoryName}`);
+      throw new Error(e);
     }
   
     return MenuItems;

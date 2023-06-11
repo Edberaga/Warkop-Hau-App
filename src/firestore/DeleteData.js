@@ -1,6 +1,6 @@
 import { db } from "../firebase.js";
 import { doc, deleteDoc } from "@firebase/firestore";
-import "../common/Exceptions/FirestoreErrorMessage.js";
+import {deleteDocumentError} from "../common/Exceptions/FirestoreErrorMessage.js";
 
 export const deleteRecord = async(collectionName, documentName) => {
     try {
