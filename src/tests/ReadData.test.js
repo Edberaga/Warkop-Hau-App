@@ -1,4 +1,4 @@
-import { getMenuItemsFromCollection } from "../firestore/ReadData";
+import { getMenuItemsFromCollection } from "../services/firestore/ReadData";
 
 test('Able to Fetch Data from Firestore', async() => {
   

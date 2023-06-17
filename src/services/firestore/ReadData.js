@@ -1,8 +1,8 @@
-import { db } from "../firebase.js";
+import { db } from "../../firebase.js";
 import { doc, getDoc } from "@firebase/firestore";
 import { collection, getDocs } from "@firebase/firestore";
-import { MenuItem } from "../types/MenuItem.js";
-import {retrieveCollectionError, retrieveDocumentsError} from "../common/Exceptions/FirestoreErrorMessage.js";
+import { MenuItem } from "../../models/MenuItem.js";
+import {retrieveCollectionError, retrieveDocumentsError} from "../../common/Exceptions/FirestoreErrorMessage.js";
 
 //access a collection
 export const openCollection = async (collectionName) => {
