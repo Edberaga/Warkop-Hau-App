@@ -1,5 +1,5 @@
 // used when we want to perform strict check on types
-import { typeErrorMessage } from "../common/Exceptions/TypeErrorMessage";
+import { typeErrorMessage } from "../Exceptions/TypeErrorMessage";
 
 // base datatypes that can be checked using the typeof operator
 export const dataTypes = [ 'string','number','boolean','object'];

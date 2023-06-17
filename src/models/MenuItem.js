@@ -1,4 +1,4 @@
-import { assertType } from "../util/typeChecker";
+import { assertType } from "../common/util/typeChecker";
 
 export class MenuItem {
 
