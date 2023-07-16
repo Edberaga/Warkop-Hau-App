@@ -1,6 +1,6 @@
 import { db } from "../../firebase.js";
-import { doc, getDoc } from "@firebase/firestore";
-import { collection, getDocs } from "@firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { MenuItem } from "../../models/MenuItem.js";
 import {retrieveCollectionError, retrieveDocumentsError} from "../../common/Exceptions/FirestoreErrorMessage.js";
 
