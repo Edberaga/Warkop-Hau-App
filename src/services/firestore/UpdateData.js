@@ -1,5 +1,5 @@
 import { db } from "../firebase.js";
-import { doc, runTransaction } from "@firebase/firestore";
+import { doc, runTransaction } from "firebase/firestore";
 import { updateDocumentError } from "../common/Exceptions/FirestoreErrorMessage.js";
 
 export const updateRecord = async (collectionName, documentName, propertyName, valueToUpdate) => {

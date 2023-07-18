@@ -14,8 +14,6 @@
     "@babel/preset-env": "^7.22.5",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@firebase/auth": "^1.0.0",
-    "@firebase/firestore": "^4.0.0",
     "@mui/material": "^5.11.16",
     "babel-jest": "^29.5.0",
     "firebase": "^10.0.0",
