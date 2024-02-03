@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Routes } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase';
 
@@ -12,9 +12,10 @@ import AnekaJus from './scenes/AnekaJus'
 import AyamGoreng from './scenes/AyamGoreng'
 import Tambahan from './scenes/Tambahan'
 import Topbar from './components/Customer Bar/Topbar'
+
 import Bill from './scenes/Admin/Bill'
 import Order from './scenes/Admin/Order'
-
+import Login from './scenes/Admin/Login';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,24 +28,29 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        {/*For customer viewing the menu */}
-        <Topbar/>
-        <Route path='/' element={Menu}/>
-        <Route path='/makanan' element={Makanan}/>
-        <Route path='/minuman' element={Minuman}/>
-        <Route path='/sayuran' element={Sayuran}/>
-        <Route path='/aneka-jus' element={AnekaJus}/>
-        <Route path='/ayam-goreng' element={AyamGoreng}/>
-        <Route path='/tambahan' element={Tambahan}/>
+      <Topbar/>
+      <menu className='app-container'>
+        <Routes>
+          {/*For customer viewing the menu */}
+          <Route path='/' element={<Menu/>}/>
+          <Route path='/*' element={<Menu/>} />
+          {/*
+          <Route path='/makanan' element={<Makanan/>}/>
+          <Route path='/minuman' element={<Minuman/>}/>
+          <Route path='/sayuran' element={<Sayuran/>}/>
+          <Route path='/aneka-jus' element={<AnekaJus/>}/>
+          <Route path='/ayam-goreng' element={<AyamGoreng/>}/>
+          <Route path='/tambahan' element={<Tambahan/>}/>
+          */}
 
-        {/*For admin viewing the system */}
-        <Route path='/login' element={<Login/>}/>
-          <Route element={<RequireAuth/>}>
-            <Route path='/bill-panel' element={<Bill/>}/>
-            <Route path='/order-panel' element={<Order/>}/>
-          </Route>
-      </Routes>
+          {/*For admin viewing the system */}
+          <Route path='/warkop-admin' element={<Login/>}/>
+            <Route element={<RequireAuth/>}>
+              <Route path='/bill-panel' element={<Bill/>}/>
+              <Route path='/order-panel' element={<Order/>}/>
+            </Route>
+        </Routes>
+      </menu>
     </div>
   )
 }
