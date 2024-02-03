@@ -1,0 +1,10 @@
+.menu-button {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu-button button {
+    background-color: transparent;
+    padding: 10px;
+}
