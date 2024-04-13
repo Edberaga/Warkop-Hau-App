@@ -1,0 +1,43 @@
+.login-page{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-input, .login-submit {
+    width: 250px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 0;
+}
+
+.login-input {border-radius: 5px;}
+
+.login-submit{
+    width: auto;
+    font-weight: 600;
+    color: aliceblue;
+    background-color: rgb(255, 145, 0);
+    transition: 0.15s ease-out;
+    margin-top: 10px;
+}
+
+.login-submit:hover {
+    cursor: pointer;
+    background-color: #27b0ff;
+}
+
+.login-validation {
+    font-size: 12px;
+    color: red;
+    margin: 5px;
+}
