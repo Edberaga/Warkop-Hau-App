@@ -16,6 +16,7 @@ import Topbar from './components/Customer Bar/Topbar'
 import Bill from './scenes/Admin/Bill'
 import Order from './scenes/Admin/Order'
 import Login from './scenes/Admin/Login';
+import AdminPanel from './scenes/Admin';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Topbar/>
-      <menu className='app-container'>
+      <main className='app-container'>
         <Routes>
           {/*For customer viewing the menu */}
           <Route path='/' element={<Menu/>}/>
@@ -46,11 +47,12 @@ function App() {
           {/*For admin viewing the system */}
           <Route path='/warkop-admin' element={<Login/>}/>
             <Route element={<RequireAuth/>}>
+              <Route path='/' element={<AdminPanel/>}/>
               <Route path='/bill-panel' element={<Bill/>}/>
               <Route path='/order-panel' element={<Order/>}/>
             </Route>
         </Routes>
-      </menu>
+      </main>
     </div>
   )
 }
