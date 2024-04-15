@@ -8,3 +8,9 @@
     background-color: transparent;
     padding: 10px;
 }
+
+button a {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}

@@ -3,31 +3,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(247, 251, 255);
+    box-sizing: border-box;
 }
 
 .login-form{
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .login-input, .login-submit {
     width: 250px;
-    height: 45px;
     padding: 10px;
-    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     border: 0;
-    box-shadow: 0px 0px 5px 2px rgb(245, 245, 245);
 }
 
 .login-input {border-radius: 5px;}
 
 .login-submit{
-    width: 250px;
+    width: auto;
     font-weight: 600;
     color: aliceblue;
-    background-color: var(--primary-color);
+    background-color: rgb(255, 145, 0);
     transition: 0.15s ease-out;
+    margin-top: 10px;
 }
 
 .login-submit:hover {

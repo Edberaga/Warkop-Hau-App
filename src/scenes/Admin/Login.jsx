@@ -1,7 +1,7 @@
 import React, { useState }  from 'react'
 import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from '../../firebase';
-import "./login.css"
+import "./index.css"
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -29,26 +29,29 @@ const Login = () => {
     <main className="content">
       <section className='login-page'>
         <form onSubmit={handleLogin} className='login-form'>
-            <input 
-              type="email" 
-              className='login-input' 
-              placeholder='youremail@saysheji.com' 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input 
-              type="password" 
-              className='login-input' 
-              placeholder='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit" className='login-submit'>Login</button>
-            {error && <span className="login-validation">Incorrect Email or Password!</span>}
+          <label htmlFor="Username">Username</label>
+          <input 
+            type="email" 
+            id='Username'
+            className='login-input' 
+            placeholder='youremail@saysheji.com' 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label htmlFor="Password">Password</label>
+          <input 
+            type="password"
+            id='Password'
+            className='login-input' 
+            placeholder='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit" className='login-submit'>Login</button>
+          {error && <span className="login-validation">Incorrect Email or Password!</span>}
         </form>
       </section>
     </main>
-    
   )
 }
 
