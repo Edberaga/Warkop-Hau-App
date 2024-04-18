@@ -45,11 +45,11 @@ function App() {
           */}
 
           {/*For admin viewing the system */}
-          <Route path='/warkop-admin' element={<Login/>}/>
-            <Route element={<RequireAuth/>}>
+          <Route className='admin-panel' path='/warkop-admin' element={<Login/>}/>
+            <Route>
               <Route path='/' element={<AdminPanel/>}/>
-              <Route path='/bill-panel' element={<Bill/>}/>
-              <Route path='/order-panel' element={<Order/>}/>
+              <Route path='/bill' element={<Bill/>}/>
+              <Route path='/order' element={<Order/>}/>
             </Route>
         </Routes>
       </main>
