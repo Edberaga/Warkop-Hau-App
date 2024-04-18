@@ -17,11 +17,12 @@ import Bill from './scenes/Admin/Bill'
 import Order from './scenes/Admin/Order'
 import Login from './scenes/Admin/Login';
 import AdminPanel from './scenes/Admin';
+import Storage from './scenes/Admin/Storage';
 
 function App() {
   const [count, setCount] = useState(0);
 
-  const [user] = useAuthState(auth);
+  //const [user] = useAuthState(auth);
 
   const RequireAuth = ({children}) => {
     return user ? (children) : <Navigate to="/login"/>
@@ -45,12 +46,13 @@ function App() {
           */}
 
           {/*For admin viewing the system */}
-          <Route className='admin-panel' path='/warkop-admin' element={<Login/>}/>
-            <Route>
-              <Route path='/' element={<AdminPanel/>}/>
-              <Route path='/bill' element={<Bill/>}/>
-              <Route path='/order' element={<Order/>}/>
-            </Route>
+          <Route path='/storage' element={<Storage/>}/>
+          <Route path='/warkop-admin'>
+            <Route index element={<Login/>}/>
+            <Route path='bill' element={<Bill/>}/>
+            <Route path='order' element={<Order/>}/>
+            <Route path='storage' element={<Storage/>}/>
+          </Route>
         </Routes>
       </main>
     </div>
