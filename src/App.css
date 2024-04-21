@@ -25,6 +25,19 @@ body, .App {
   text-align: center;
 }
 
+p, h1, h2 {
+  display: block;
+  margin-block-start: 0.45em;
+  margin-block-end: 0.45em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+section {
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 500px) {
   .App {
     display: flex;
