@@ -2,12 +2,9 @@
  import { initializeApp } from "firebase/app";
  import { getFirestore } from "firebase/firestore"
  import { getAuth } from "firebase/auth";
-
- // TODO: Add SDKs for Firebase products that you want to use
- // https://firebase.google.com/docs/web/setup#available-libraries
- // Your web app's Firebase configuration
+ 
  const firebaseConfig = {
-  apiKey: "AIzaSyCWUdZvNslGB8D0S_5SAwfGfdGJD0m5X5c",
+  apiKey: import.meta.env.VITE_FIREBASE_KEY,
   authDomain: "warkop-hau-app.firebaseapp.com",
   projectId: "warkop-hau-app",
   storageBucket: "warkop-hau-app.appspot.com",
@@ -23,5 +20,4 @@
  export const auth = getAuth(app);
 
  // Export firestore database
- // It will be imported into your react app whenever it is needed
  export const db = getFirestore(app);
