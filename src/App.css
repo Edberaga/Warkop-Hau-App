@@ -38,10 +38,10 @@ section {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
   .App {
     display: flex;
     align-items: center;
     height: 100vh;
   }
-}
+} */
