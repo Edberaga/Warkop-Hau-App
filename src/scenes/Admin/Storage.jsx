@@ -30,8 +30,8 @@ const Storage = () => {
 
   console.log(data);
 
-  const status = ['Cukup', 'Setengah', 'Sedikit', 'Habis']
-  const statusCol = ['green', 'orange', 'red', 'gray']
+  const statusName = ['Cukup', 'Setengah', 'Sedikit', 'Habis']
+  const statusColor = ['green', 'orange', 'red', 'gray']
   const [count, setCount] = useState(0);
 
   const setStatus = () => {
@@ -46,31 +46,20 @@ const Storage = () => {
   return (
     <section className='storage'>
       <h2>Perlengkapan</h2>
+      {data.map(({name, status}) => ( 
       <div className='list-item'>
-        <p>Kertas</p>
+        <p>{name}</p>
         <button
         className='list-button'
         style={{
-          backgroundColor:`${statusCol[count]}`
+          backgroundColor:`${statusColor[status]}`
         }}
         onClick={setStatus}
         >
-          {status[count]}
+          {statusName[status]}
         </button>
       </div>
-
-      <div className='list-item'>
-        <p>Tusuk Gigi</p>
-        <button
-        className='list-button'
-        style={{
-          backgroundColor:`${statusCol[count]}`
-        }}
-        onClick={setStatus}
-        >
-          {status[count]}
-        </button>
-      </div>
+      ))}
     </section>
   )
 }
